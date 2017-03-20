@@ -51,8 +51,8 @@
 		if ( isset( $_POST['submit'] ) ) {
 			global $cxn;
 			$username = trim( $_POST['username'] );
-			$hash_password = sha1( $_POST['password'] ;
-			$sql = "SELECT id, lastname FROM users WHERE username='{$username}' AND password='{$hash_password}'";
+			$hash_password = sha1( $_POST['password'] );
+			$sql = "SELECT * FROM login WHERE username='{$username}' AND password='{$hash_password}'";
 			$result = mysqli_query( $cxn, $sql );
 
 			// check if the field exists in our database returns just 1 row
